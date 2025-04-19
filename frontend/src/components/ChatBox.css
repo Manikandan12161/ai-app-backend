@@ -1,10 +1,16 @@
-/* Prevent page scroll */
+/* Global reset and layout protection */
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
   width: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
   font-family: sans-serif;
 }
 
@@ -67,6 +73,8 @@ html, body {
   display: flex;
   gap: 0.5rem;
   margin-top: 1rem;
+  width: 100%;
+  flex-shrink: 0;
 }
 
 .input-box input {
@@ -76,6 +84,7 @@ html, body {
   border: 1px solid #d1d5db;
   font-size: 1rem;
   outline: none;
+  min-width: 0; /* Prevent overflow in flex */
 }
 
 .input-box button {
@@ -89,6 +98,8 @@ html, body {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .input-box button:hover {
